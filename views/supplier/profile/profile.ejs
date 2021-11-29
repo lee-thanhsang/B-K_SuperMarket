@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Profile</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../company/assets/img/favicon.png" rel="icon">
+  <link href="../../company/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../company/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Template Main CSS File -->
+  <link href="../../company/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html"><span>B&K</span>Supermarket</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="../../company/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="/supplier/home">Trang chủ</a></li>
+          <li class="dropdown"><a href="#" class="active"><span>Thông tin cá nhân</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/supplier/profile">Thông tin cá nhân</a></li>
+              <li><a href="/supplier/history">Lịch sử tương tác</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Thông tin khuyến mãi</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/supplier/promotion">Tất cả khuyến mãi</a></li>
+              <li><a href="/supplier/my-promotion">Khuyến mãi của tôi</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/supplier/contact">Liên hệ</a></li>
+          <li><a href="/logout">Đăng xuất</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Thông tin cá nhân</h2>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-4 entries">
+
+            <article class="entry" style="height: 500px;  background-color:aquamarine;">
+
+              <div class="entry-img">
+                <img src="../../../company/assets/img/blog/blog-3.jpg" alt="" class="img-fluid" style="width:100%; height: auto;">
+              </div>
+
+              <h4>
+                <%= infomation.SName%>
+              </h4>
+
+              <div class="entry-meta">
+                <ul>
+                  <li><a href="#">Lĩnh vực kinh doanh: <span style="color: brown;"> <%= infomation.BusinessAreas%></span></a></li>
+                </ul>
+              </div>
+
+            </article><!-- End blog entry -->
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-8">
+
+            <div class="sidebar" style="height: 500px; background-color:aquamarine;">
+
+              <h3 class="sidebar-title">Thông tin doanh nghiệp</h3>
+              <div class="sidebar-item categories">
+                <ul>
+                  <li><a href="#">Mã số doanh nghiệp <span style="color: brown;"><%= infomation.SID%></span></a></li>
+                  <li><a href="#">Email <span style="color: brown;"><%= infomation.Email%></span></a></li>
+                  <li>
+                    <a href="#">Số điện thoại 
+                        <span style="color: brown;">
+                          <%= infomation.PhoneNumber + "  "%>
+                        </span>
+                    </a>
+                  </li>
+                  <li><a href="#">Địa chỉ <span style="color: brown;"><%= infomation.NumberStreet + " - " + infomation.Wards + " - " + infomation.District + " - " + infomation.City%></span></a></li>
+                </ul>
+              </div><!-- End sidebar categories-->
+
+              <!-- Button trigger modal -->
+              <button style="margin-left: 15%;" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cập nhật thông tin</button>
+
+              <a href="/supplier/history"><button style="margin-left: 10%;" type="button" class="btn btn-primary">Xem lịch sử tương tác</button></a>
+              </div>
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+          
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+    <section>
+      <!-- Large modal -->
+      <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #0d6eff;">
+              <h5 class="modal-title" id="exampleModalLabel" >Cập nhật thông tin Doanh nghiệp</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="update-info-supplier" method="post">
+                <div class="form-group">
+                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Tên doanh nghiệp</label>
+                      <input type="text" class="form-control" placeholder="Tên doanh nghiệp" name="SName" value="<%=infomation.SName%>">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Mã số doanh nghiệp</label>
+                      <input type="text" class="form-control" name="SID" value="<%=infomation.SID%>">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 5%;">                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Lĩnh vực kinh doanh</label>
+                      <input type="text" class="form-control" placeholder="Lĩnh vực" name="BusinessAreas" value="<%=infomation.BusinessAreas%>">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Email</label>
+                      <input type="text" class="form-control" placeholder="Địa chỉ email" name="Email" value="<%=infomation.Email%>">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 5%;">                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Số điện thoại</label>
+                      <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="PhoneNum1" value="<%=infomation.PhoneNumber%>">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 5%;">  
+                                  
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Số nhà, đường</label>
+                      <input type="text" class="form-control" placeholder="Số nhà" name="NumberStreet" value="<%=infomation.NumberStreet%>">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Phường</label>
+                      <input type="text" class="form-control" placeholder="Xã/Phường" name="Wards" value="<%=infomation.Wards%>">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 5%;">                
+                  <div class="row">                     
+                    <div class="col-md-6">
+                      <label>Quận</label>
+                      <input type="text" class="form-control" placeholder="Quận/Huyện" name="District" value="<%=infomation.District%>">
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <label>Thành Phố</label>
+                      <input type="text" class="form-control" placeholder="Tỉnh/Thành phố" name="City" value="<%=infomation.City%>">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-left: 5%;">Đóng</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left: 10%;">Cập nhật</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <%- include ('../_layouts/footer') -%>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../../company/assets/vendor/aos/aos.js"></script>
+  <script src="../../company/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../company/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../company/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../../company/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../company/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../company/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../../company/assets/js/main.js"></script>
+
+</body>
+
+</html>

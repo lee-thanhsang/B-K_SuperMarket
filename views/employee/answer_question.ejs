@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Tư vấn | Khách hàng</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../../company/assets/img/favicon.png" rel="icon">
+  <link href="../../company/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../../company/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../../company/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Template Main CSS File -->
+  <link href="../../company/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+  
+        <h1 class="logo me-auto"><a href="index.html"><span>B&K</span>Supermarket</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="../../company/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a href="home">Trang chủ</a></li>
+            <li class="dropdown"><a href="#"><span>Thông tin</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="profile">Thông tin cá nhân</a></li>
+                <li><a href="history">Lịch sử tư vấn</a></li>
+                <li><a href="employee-information">Thông tin nhân viên</a></li>
+              </ul>
+            </li>
+            <li><a href="promotion">Khuyến mãi</a></li>
+            
+            <li class="dropdown"><a href="#"><span>Khách hàng</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="customer-rate"><span>Đánh giá từ khách hàng</span></a></li>
+                <li><a href="customer-information">Thông tin khách hàng</a></li>
+              </ul>
+            </li>
+              
+            </li>
+            <li class="dropdown"><a href="#"  class="active"><span>Câu hỏi cần trả lời</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="answer-question-customer">Từ khách hàng</a></li>
+                <li><a href="answer-question-supplier">Từ nhà cung cấp</a></li>
+              </ul>
+            </li>
+            <li><a href="/logout">Đăng xuất</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+        <div class="header-social-links d-flex">
+          <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+        </div>
+  
+      </div>
+    </header><!-- End Header -->
+
+  <main id="main">
+
+     <!-- ======= Breadcrumbs ======= -->
+     <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Bạn cần tìm gì?</h2>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-title">
+          <h2>Câu hỏi cần trả lời</h2>
+        </div>
+        <div class="faq-list">
+          <ul>
+            <%var i = 0;%>
+            <%ques_ans.forEach(function(QandA){%>
+              <%i = i + 1;%>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed" data-bs-target=<%="#faq-list-" + i.toString()%>> <%=QandA.TimeQues.toISOString().slice(0, 10) +" / "+QandA.CID +" - "+ QandA.LastName +" "+ QandA.FirstName%> <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <a data-bs-toggle="collapse" data-bs-target=<%="#faq-list-" + i.toString()%>> <%=QandA.Question%></a>
+              <div id=<%="faq-list-" + i.toString()%> class="collapse" data-bs-parent=".faq-list">
+                <button style="margin-left: 46%; margin-top: 5%;" type="button" class="btn btn-primary add-anwser-button" data-toggle="modal" data-target="#add-anwser" data-cid="<%=QandA.CID%>" data-question="<%=QandA.Question%>" >Trả lời</button>
+              </div>
+            </li>
+            <%})%>
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+    <section>
+      <!-- Large modal -->
+      <div class="modal fade" id="add-anwser" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #0d6eff;">
+              <h5 class="modal-title" id="exampleModalLabel" >Trả lời câu hỏi</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="add-answer" method="post">
+                <div class="form-group">
+                  
+                  <div class="row">
+                    <div class="col-md-12">
+                      <input type="text" class="form-control" placeholder="Nhập câu trả lời" name="Answer" required>
+                      <input type="text" class="form-control" name="CID" hidden=true>
+                      <input type="text" class="form-control" name="Question" hidden=true>
+                    </div>
+                    
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-8"></div>
+                  <div class="col-lg-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Xác nhận</button>
+                  </div>
+                  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <%- include ('_layouts/footer') -%>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../../company/assets/vendor/aos/aos.js"></script>
+  <script src="../../company/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../company/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../../company/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../../company/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../company/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../company/assets/vendor/waypoints/noframework.waypoints.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../../company/assets/js/main.js"></script>
+  <script src="../../js/employee/index.js"></script>
+
+</body>
+
+</html>
